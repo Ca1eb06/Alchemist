@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          .navbar {
+            width: 100%;
+            background-color: #000000;
+            border-bottom-style: solid;
+            padding: 20px;
+            text-align: center; /* Moved text-align to center */
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li {
+            display: inline;
+            margin: 0 20px; /* Adjusted the margin to create equal spacing */
+        }
+        .navbar li a {
+            text-decoration: none;
+            color: #FFFFFF; /* Changed link color to white */
+        }
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #232327;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+   </head>
+   <body>
+      <body style="background-color:aquamarine;">
+   </body>
+   <header>
+      <nav class="navbar">
+         <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Products</a></li>
+            <li><a href="signup">Sign In</a></li>
+            <li><a href="contact">Contact</a></li>
+         </ul>
+      </nav>
+   </header>
+   {% if users|length < 1 %}
+   <h4>There are no users signed up.</h4>
+   {% else %}
+   {% for user in users %}
+   <table>
+      <tr>
+         <th>Username</th>
+         <th>Password</th>
+      </tr>
+      <tr>
+         <th>{{ user['name'] }}</th>
+         <th>{{ user['password'] }}</th>
+      </tr>
+   </table>
+   {% endfor %}
+   {% endif %}
+   </body>
+</html>
